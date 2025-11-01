@@ -1,5 +1,5 @@
 ## Introduction
-**Validation** is my project in which I am using hibernate validation and I am creating a new validations.
+**Validation** is my project in which I am using hibernate validation and I am creating a new type of validations.
 
 ## How to make new validation
 
