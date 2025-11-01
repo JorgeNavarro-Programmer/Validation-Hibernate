@@ -1,0 +1,1 @@
+INSERT INTO clients (userName, password, age, email) VALUES (pepitogrillo,12345678,21,pepepepito@gmail.com);
