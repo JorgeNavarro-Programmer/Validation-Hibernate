@@ -30,9 +30,7 @@ public class ClientDoNotExistValidation implements ConstraintValidator<ClientDoN
     /**
      * Comprobe if the user exist or not
      * 
-     * @param value   - client to valid to exist or not
-     * @param context
-     * 
+     * @param value - client to valid to exist or not
      * @return true if the user don´t exist, false if the user exist
      */
     @Override
