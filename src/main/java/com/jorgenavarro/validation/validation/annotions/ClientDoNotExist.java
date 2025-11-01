@@ -11,11 +11,12 @@ import com.jorgenavarro.validation.validation.ClientDoNotExistValidation;
 import jakarta.validation.Constraint;
 
 @Documented
-@Target(ElementType.PARAMETER)
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = {ClientDoNotExistValidation.class})
+@Target(ElementType.PARAMETER) // Where the annotation are used
+@Retention(RetentionPolicy.RUNTIME) // The type of retention
+@Constraint(validatedBy = { ClientDoNotExistValidation.class }) // To indicate the class is used to validate
 public @interface ClientDoNotExist {
-    String message() default "Client already exists";
+    String message() default "Client already exists"; // The mensaje who will be return when the program throw exception
+                                                      // for validation
 
     Class<?>[] groups() default {};
 

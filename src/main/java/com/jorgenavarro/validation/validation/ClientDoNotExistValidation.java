@@ -11,10 +11,12 @@ import jakarta.validation.ConstraintValidatorContext;
  * @author Jorge Navarro
  *         This class valid if the client don´t exist
  */
+// This class must implement ConstraintValidator<@inteface that you created, the
+// value that will be validated>
 public class ClientDoNotExistValidation implements ConstraintValidator<ClientDoNotExist, Client> {
 
     /**
-     * Used to vilid if the client exist
+     * Used to valid if the client don´t exist
      */
     private ClientService clientService;
 

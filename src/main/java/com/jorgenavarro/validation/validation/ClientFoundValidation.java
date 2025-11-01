@@ -1,7 +1,7 @@
 package com.jorgenavarro.validation.validation;
 
 import com.jorgenavarro.validation.service.ClientService;
-import com.jorgenavarro.validation.validation.annotions.ClientNotFound;
+import com.jorgenavarro.validation.validation.annotions.ClientFound;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
@@ -10,10 +10,12 @@ import jakarta.validation.ConstraintValidatorContext;
  * @author Jorge Navarro
  *         This class valid if the client exist
  */
-public class ClientNotFoundValidation implements ConstraintValidator<ClientNotFound, Long> {
+// This class must implement ConstraintValidator<@inteface that you created, the
+// value that will be validated>
+public class ClientFoundValidation implements ConstraintValidator<ClientFound, Long> {
 
     /**
-     * Used to find the user
+     * Used to valid if the client exist
      */
     private ClientService clientService;
 
@@ -22,7 +24,7 @@ public class ClientNotFoundValidation implements ConstraintValidator<ClientNotFo
      * 
      * @param clientService - to find the user
      */
-    public ClientNotFoundValidation(ClientService clientService) {
+    public ClientFoundValidation(ClientService clientService) {
         this.clientService = clientService;
     }
 

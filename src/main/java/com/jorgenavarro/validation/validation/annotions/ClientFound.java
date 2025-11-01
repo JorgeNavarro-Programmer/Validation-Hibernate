@@ -10,13 +10,13 @@ import com.jorgenavarro.validation.validation.ClientNotFoundValidation;
 
 import jakarta.validation.Constraint;
 
-
 @Documented
-@Target(ElementType.PARAMETER)
-@Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = ClientNotFoundValidation.class)
+@Target(ElementType.PARAMETER) // Where the annotation are used
+@Retention(RetentionPolicy.RUNTIME) // The type of retention
+@Constraint(validatedBy = ClientNotFoundValidation.class) // To indicate the class is used to validate
 public @interface ClientNotFound {
-    String message() default "We have not any client with this ID";
+    String message() default "We have not any client with this ID"; // The mensaje who will be return when the program
+                                                                    // throw exception for validation
 
     Class<?>[] groups() default {};
 

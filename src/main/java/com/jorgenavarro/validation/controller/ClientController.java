@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jorgenavarro.validation.entities.Client;
 import com.jorgenavarro.validation.service.ClientService;
 import com.jorgenavarro.validation.validation.annotions.ClientDoNotExist;
-import com.jorgenavarro.validation.validation.annotions.ClientNotFound;
+import com.jorgenavarro.validation.validation.annotions.ClientFound;
 
 import jakarta.validation.Valid;
 
@@ -50,7 +50,7 @@ public class ClientController {
      * @return Client
      */
     @GetMapping("/findUser/{id}")
-    public ResponseEntity<?> findUser(@ClientNotFound @PathVariable Long id) {
+    public ResponseEntity<?> findUser(@ClientFound @PathVariable Long id) {
 
         return new ResponseEntity<>(clientService.findById(id), HttpStatus.OK);
     }
@@ -62,7 +62,7 @@ public class ClientController {
      */
     @DeleteMapping("/remove/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void removeUser(@ClientNotFound @PathVariable Long id) {
+    public void removeUser(@ClientFound @PathVariable Long id) {
         clientService.remove(id);
     }
 
