@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.jorgenavarro.validation.service.ClientService;
 import com.jorgenavarro.validation.validation.ClientDoNotExistValidation;
-import com.jorgenavarro.validation.validation.ClientNotFoundValidation;
+import com.jorgenavarro.validation.validation.ClientFoundValidation;
 
 /**
  * @author Jorge Navarro
@@ -32,7 +32,7 @@ public class ConfigurationValidator {
      * @return ClientNotFoundValidation
      */
     @Bean
-    public ClientNotFoundValidation getClientNotFound(ClientService clientService) {
-        return new ClientNotFoundValidation(clientService);
+    public ClientFoundValidation getClientNotFound(ClientService clientService) {
+        return new ClientFoundValidation(clientService);
     }
 }
